@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 
-interface ButtonProps {}
+interface ButtonProps {
+  caption: string;
+}
 
-export const Button: React.FC<ButtonProps> = () => {
+export const Button: React.FC<ButtonProps> = ({ caption }) => {
   const [count, setCount] = useState(0);
   return (
     <button onClick={() => setCount((count) => count + 1)}>
-      count is {count}
+      {caption} {count}
     </button>
   );
 };
